@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --border-default: 3px solid black;
+    --background-color: #333333;
+    --color-white: #ffffff;
+    --color-beige: hsl(33, 100%, 88%);
+    --color-gray: #808080;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+}
+
+h1 {
+    padding: 1rem;
+    color: var(--color-white);
+    text-align: center;
+    font-size: 3rem;
+}
+
+#btnStart {
+    margin-bottom: 1rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    padding: 0.75rem 2rem;
+    font-weight: bold;
+    background-color: var(--color-beige);
+}
+
+#btnStart:hover {
+    background-color: var(--color-gray);
+    color: var(--color-white);
+}
+
+/*---------------------------------------------------------------------*/
+
+#player1, #player2, #turnOf {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    width: 30%;
+    background-color: hsl(33, 100%, 88%);
+}
+
+#info {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    /*height: 2rem;*/
+}
+
+#board {
+    display: flex;
+    flex-direction: column;
+    gap: rem;
+    width: 100vw;
+    height: 70vh;
+    justify-content: center;
+    background-color: hsl(33, 100%, 88%);
+    align-items: center;
+}
+
+#board > div {
+    display: flex;
+}
+
+.space {
+    display: flex;
+    background-color: aqua;
+    font-size: 6rem;
+    width: 150px;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+}
+
+.space:hover {
+    background-color: #ccc;
+}
+
+#l1c1 {
+    cursor: cell;
+    border-right: var(--border-default);
+    border-bottom: var(--border-default);
+}
+
+#l1c2 {
+    cursor: cell;
+    border-right: var(--border-default);
+    border-left: var(--border-default);
+    border-bottom: var(--border-default);
+}
+
+#l1c3 {
+    cursor: cell;
+    border-left: var(--border-default);
+    border-bottom: var(--border-default);
+}
+
+#l2c1 {
+    cursor: cell;
+    border-top: var(--border-default);
+    border-right: var(--border-default);
+    border-bottom: var(--border-default);
+}
+
+#l2c2 {
+    cursor: cell;
+    border: var(--border-default);
+}
+
+#l2c3 {
+    cursor: cell;
+    border-top: var(--border-default);
+    border-left: var(--border-default);
+    border-bottom: var(--border-default);
+}
+
+#l3c1 {
+    cursor: cell;
+    border-top: var(--border-default);
+    border-right: var(--border-default);
+}
+
+#l3c2 {
+    cursor: cell;
+    border-top: var(--border-default);
+    border-right: var(--border-default);
+    border-left: var(--border-default);
+}
+
+#l3c3 {
+    cursor: cell;
+    border-top: var(--border-default);
+    border-left: var(--border-default);
+}
+
+.ganhou {
+    background-color: hsla(54, 93%, 55%, 0.775);
+}
