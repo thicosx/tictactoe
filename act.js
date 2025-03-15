@@ -1,34 +1,30 @@
-// Criei uma Variavel Zerada
+// Criação de Variáveis
 let playerPlayingNow = "None"
 let board = []
-
-const btnStart = document.getElementById('btnStart')
-let playerTurn = document.getElementById('turnOf')
 let player1Name
 let player2Name
+
+const btnStart = document.getElementById('btnStart')
+const player1Space = document.getElementById('player1')
+const player2Space = document.getElementById('player2')
 
 // Adiciono Ação no Botão
 btnStart.addEventListener('click', function() {
 
     clearBoard()
 
-    const info = document.getElementById('info')
-    const board = document.getElementById('board')
+    btnStart.innerText = 'Reiniciar Jogo'
     
     // Pego o nome dos Jogadores
     player1Name = prompt("Digite o nome do primeiro jogador (O): ")
     player2Name = prompt("Digite o nome do segundo jogador (X): ")
 
-    // Seto o nome do Jogador 1 na Tela
-    const player1Space = document.getElementById('player1')
-    player1Space.innerText = "Player 1 - " + player1Name
-
-    // Seto o nome do Jogador 2 na Tela
-    const player2Space = document.getElementById('player2')
-    player2Space.innerText = "Player 2 - " + player2Name
+    // Seto o nome dos Jogadores na Tela
+    player1Space.innerText = "P1 - " + player1Name
+    player2Space.innerText = "P2 - " + player2Name
 
     // Set o Jogador 1 como vez
-    playerTurn.innerText = "Vez de: " + player1Name
+    player1Space.classList.add('vez')
     playerPlayingNow = "O"
 
     document.querySelectorAll('.space').forEach(function (element, index) {
@@ -46,7 +42,8 @@ function checaVez(cel, nro) {
             board[nro] = "O"
             verifica()
             playerPlayingNow = "X"
-            playerTurn.innerText = "Vez de: " + player2Name
+            player1Space.classList.remove('vez')
+            player2Space.classList.add('vez')
         }
         else
         {
@@ -54,7 +51,8 @@ function checaVez(cel, nro) {
             board[nro] = "X"
             verifica()
             playerPlayingNow = "O"
-            playerTurn.innerText = "Vez de: " + player1Name
+            player1Space.classList.add('vez')
+            player2Space.classList.remove('vez')
         }
     }
 }
@@ -70,6 +68,9 @@ function clearBoard() {
     playerPlayingNow = "None"
     player1Name = ''
     player2Name = ''
+
+    player1Space.classList.remove('vez')
+    player2Space.classList.remove('vez')
 }
 
 function verifica() {
