@@ -13,10 +13,7 @@ btnStart.addEventListener('click', function() {
     clearBoard()
 
     const info = document.getElementById('info')
-    info.style.display = "flex"
-
     const board = document.getElementById('board')
-    board.style.display = "flex"
     
     // Pego o nome dos Jogadores
     player1Name = prompt("Digite o nome do primeiro jogador (O): ")
